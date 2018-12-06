@@ -1,0 +1,10 @@
+<div>
+    <h1>GOT TO CATCH THEM ALL?</h1>
+    {{#each pokemon}}
+    <div>
+        <h2># {{this.pkmnNumber}}</h2>
+        <h2>{{this.pkmnName}}</h2>
+        <button data-pkmnNumber = this.pkmnNumber onclick="caughtPokemon()">Caught this Pokemon</button>
+    </div>
+    {{/each}}
+</div>

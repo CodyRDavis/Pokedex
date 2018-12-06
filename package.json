@@ -9,11 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.16.3",
     "express-handlebars": "^2.0.1",
     "mysql": "^2.10.2"
   },
   "devDependencies": {
     "handlebars-helper-css": "^0.1.0"
+=======
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+>>>>>>> 41c8b95f624301baa98ac86931e9b99b5d694d54
   }
 }
