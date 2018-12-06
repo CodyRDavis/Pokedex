@@ -1,35 +1,23 @@
-//EXPRESS SERVER DEPENDENCIES
-const express = require('express');
-const PORT = 3000; //add the app stuff for deployment
+//SERVER DEPENDENCIES
+const express = require("express");
+const PORT = process.env.PORT || 3000;
 const app = express();
-const htmlRoutes = require('./app/routes/htmlRoutes');
-const apiRoutes = require('./app/routes/apiRoutes');
 
-//ROUTES
-app.use('/api', apiRoutes);
-app.use(htmlRoutes);
+//PREP REQ.BODY
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-//mySQL DEPENDENCIES
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "Socorro!3401",
-    database: "pokedex_db"
-});
+//HANDLEBAR DEPENDENCIES AND INITILIZATION
+const exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-//INTITLIZING MYSQL CONNECTION
-connection.connect(function(err){
-    if(err){
-        console.log("SERVER: ERROR CONNECTING TO DATABASE "+ err.stack);
-        return;
-    }
-    console.log("SERVER: CONNECTED TO DATABASE - Connection: " + connection.threadId);
-})
+// Import routes and give the server access to them.
+app.use(express.static("public"));
+app.use(require('./controllers/routes'));
 
 
-app.listen(PORT, function(){
-    console.log("SERVER STARTED");
-    console.log("SERVER LISTENING PORT: ", PORT);
+//INTILIZING SERVER
+app.listen(PORT, function() {
+  console.log("SERVER ONLINE:" + PORT);
 });

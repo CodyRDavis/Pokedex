@@ -1,0 +1,35 @@
+<h2>Pokemon to Find</h2>
+
+<ul>
+  {{#each pokemon}}
+    {{#unless caught}}
+    <li>
+      <h4>{{this.pokeName}}</h4>
+      <p>{{this.pokeNumber}}</p>
+    </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+
+<h2>Add a Pokemon</h2>
+<form class="create-form">
+    <label for="name">Pokemon:</label>
+    <input type="text" id="name" name="pokeName">
+    <label>Pokedex number: </label>
+    <input type="number" id = "number" name ="pokeNumber">
+  
+  <button type="submit">Add Pokemon</button>
+</form>
+
+<h2>Caught Pokemon</h2>
+
+<ul>
+  {{#each pokemon}}
+    {{#if caught}}
+      <h4>this.pokeName</h4>
+      <p>this.pokeNumber</p>
+    {{/if}}
+  {{/each}}
+</ul>
