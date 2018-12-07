@@ -1,5 +1,7 @@
 # Pokedex
 
+### deployed: https://pokemontracker-utbc.herokuapp.com/
+
 ## Description:
 Add pokemon you need to catch to a list in the database, and click a button after you catch them to change their state to caught.
 the webpage will update to reflect these changes.
