@@ -22,8 +22,11 @@ router.post("/api/pokemon", function(req, res) {
   });
 });
 
-router.put('/api/pokemon', function(req,res){
-  res.send(req.body);
+router.put('/api/pokemon/:id', function(req,res){
+  const id = req.params.id;
+  con.query("UPDATE pokemon SET pokeCaught = ? WHERE id = ?", [true, id], function(err, result){
+    res.status(200).end();
+  });
 })
 
 // Export routes for server.js to use.

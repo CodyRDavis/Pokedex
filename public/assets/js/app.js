@@ -1,6 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-  $(".change-sleep").on("click", function(event) {
+  $(".catch").on("click", function(event) {
     var id = $(this).data("id");
 
     // Send the PUT request.
@@ -9,7 +9,7 @@ $(function() {
       data: id
     }).then(
       function() {
-        console.log("changed sleep to", newSleep);
+        console.log("catching Pokemon");
         // Reload the page to get the updated list
         location.reload();
       }

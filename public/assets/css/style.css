@@ -1,19 +1,31 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
+*{
+  padding: 0;
+  margin: 0;
+}
+header{
+  color: white;
+  background-color: rgb(160, 23, 23);
+  text-align: center;
+  padding: 24px;
+}
+.pokeDex{
+  background-color: #fefefe;
+}
+.pokeDex h1,h2,h3,h4{
+  color: rgb(160,23,23); 
 }
 
-.label {
-  font-weight: bold;
+.box {
+  max-width: 750px;
+  padding: 24px;
+  margin: 12px 0px;
+}
+.box h2 {
+  margin-bottom: 12px;
 }
 
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
-}
-
-.form-group {
-  margin-bottom: 5px;
+.box li{
+  list-style-type: none;
+  padding: 12px;
+  border-bottom: 1px solid black;
 }
